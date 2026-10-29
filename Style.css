@@ -1,0 +1,2927 @@
+/*==================================================
+  HAPPY BIRTHDAY JANAB JI ❤️
+  CSS VERSION 2 - PART 1
+  Premium Foundation
+==================================================*/
+
+/*=============== GOOGLE FONT ===============*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=============== RESET ===============*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background:#070b16;
+    color:#ffffff;
+    overflow-x:hidden;
+    line-height:1.7;
+    position:relative;
+}
+
+/*=============== VARIABLES ===============*/
+
+:root{
+
+    --primary:#ff4d94;
+    --secondary:#ff8cc8;
+    --accent:#7c5cff;
+
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.18);
+
+    --text:#ffffff;
+    --text-light:#d7d7d7;
+
+    --shadow:0 20px 50px rgba(0,0,0,.35);
+
+    --radius:22px;
+
+}
+
+/*=============== BACKGROUND ===============*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at 15% 20%,rgba(255,77,148,.25),transparent 30%),
+    radial-gradient(circle at 80% 15%,rgba(124,92,255,.25),transparent 35%),
+    radial-gradient(circle at 50% 90%,rgba(0,191,255,.18),transparent 30%),
+    linear-gradient(180deg,#070b16,#0e1630,#070b16);
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    backdrop-filter:blur(2px);
+
+    z-index:-1;
+
+}
+
+/*=============== SELECTION ===============*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/*=============== SCROLLBAR ===============*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0b1225;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--primary),var(--accent));
+
+    border-radius:50px;
+
+}
+
+/*=============== LOADER ===============*/
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#070b16;
+
+    z-index:99999;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-content h1{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.loader-content p{
+
+    color:var(--text-light);
+
+    margin-bottom:20px;
+
+}
+
+.loading-bar{
+
+    width:260px;
+
+    height:8px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+}
+
+.loading-bar span{
+
+    display:block;
+
+    width:40%;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+
+    animation:loading 2s linear infinite;
+
+}
+
+@keyframes loading{
+
+    0%{
+
+        transform:translateX(-120%);
+
+    }
+
+    100%{
+
+        transform:translateX(320%);
+
+    }
+
+}
+
+/*=============== HEADER ===============*/
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:18px 7%;
+
+    z-index:999;
+
+    transition:.4s;
+
+}
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    padding:16px 28px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.logo{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:28px;
+
+}
+
+.navbar ul li a{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.navbar ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+}
+
+.navbar ul li a:hover{
+
+    color:var(--primary);
+
+}
+
+.navbar ul li a:hover::after{
+
+    width:100%;
+
+}
+/*==================================================
+        CSS V2 - PART 2A
+        PREMIUM HERO SECTION
+==================================================*/
+
+/*=============== HERO SECTION ===============*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:140px 8% 100px;
+
+    overflow:hidden;
+
+}
+
+/*=============== HERO OVERLAY ===============*/
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,77,148,.22),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(124,92,255,.25),
+    transparent 35%),
+
+    radial-gradient(circle at center,
+    rgba(255,255,255,.05),
+    transparent 60%);
+
+    z-index:1;
+
+}
+
+/*=============== HERO CONTENT ===============*/
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(22px);
+
+    border-radius:30px;
+
+    padding:70px 60px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.35);
+
+}
+
+/*=============== HERO SUBTITLE ===============*/
+
+.hero-content h3{
+
+    color:var(--secondary);
+
+    font-size:1.4rem;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+}
+
+/*=============== HERO TITLE ===============*/
+
+.hero-content h1{
+
+    font-size:4.2rem;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 25px rgba(255,77,148,.35);
+
+}
+
+/*=============== HERO SECOND TITLE ===============*/
+
+.hero-content h2{
+
+    font-size:2rem;
+
+    font-weight:600;
+
+    color:var(--secondary);
+
+    margin-bottom:30px;
+
+}
+
+/*=============== HERO PARAGRAPH ===============*/
+
+.hero-content p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:var(--text-light);
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    margin-bottom:45px;
+
+}
+
+/*=============== PREMIUM BUTTON ===============*/
+
+.hero-content button{
+
+    padding:18px 48px;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:60px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent));
+
+    box-shadow:
+    0 15px 35px rgba(255,77,148,.35);
+
+    transition:.45s;
+
+}
+
+/*=============== BUTTON HOVER ===============*/
+
+.hero-content button:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.05);
+
+    box-shadow:
+    0 25px 50px rgba(255,77,148,.45);
+
+}
+
+/*=============== HERO DECORATION ===============*/
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,77,148,.28),
+    transparent 70%);
+
+    top:-120px;
+
+    left:-120px;
+
+    border-radius:50%;
+
+    animation:floatGlow 8s ease-in-out infinite;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    background:
+    radial-gradient(circle,
+    rgba(124,92,255,.22),
+    transparent 70%);
+
+    right:-150px;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+    animation:floatGlow 10s ease-in-out infinite alternate;
+
+}
+
+/*=============== FLOAT GLOW ===============*/
+
+@keyframes floatGlow{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-25px)
+        scale(1.08);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+/*==================================================
+        CSS V2 - PART 2B
+        PREMIUM HERO EFFECTS
+==================================================*/
+
+/*============== HERO ANIMATION ==============*/
+
+.hero-content{
+
+    animation:heroFade 1.4s ease forwards;
+
+}
+
+@keyframes heroFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*============== GLASS SHINE EFFECT ==============*/
+
+.hero-content{
+
+    overflow:hidden;
+
+}
+
+.hero-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-60%;
+
+    width:220px;
+
+    height:300%;
+
+    background:rgba(255,255,255,.15);
+
+    transform:rotate(25deg);
+
+    animation:glassShine 7s linear infinite;
+
+}
+
+@keyframes glassShine{
+
+    0%{
+
+        left:-80%;
+
+    }
+
+    100%{
+
+        left:160%;
+
+    }
+
+}
+
+/*============== BUTTON GLOW ==============*/
+
+.hero-content button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero-content button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent);
+
+    transform:translateX(-100%);
+
+}
+
+.hero-content button:hover::before{
+
+    animation:btnShine .8s linear;
+
+}
+
+@keyframes btnShine{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(220%);
+
+    }
+
+}
+
+/*============== FLOATING PARTICLES ==============*/
+
+.hero span{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.6);
+
+    animation:particle 12s linear infinite;
+
+}
+
+@keyframes particle{
+
+    0%{
+
+        transform:translateY(100vh) scale(0);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.8);
+
+        opacity:0;
+
+    }
+
+}
+
+/*============== SCROLL INDICATOR ==============*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:35px;
+
+    height:60px;
+
+    border:2px solid rgba(255,255,255,.5);
+
+    border-radius:30px;
+
+}
+
+.scroll-indicator span{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    left:50%;
+
+    top:12px;
+
+    transform:translateX(-50%);
+
+    animation:scrollDown 2s infinite;
+
+}
+
+@keyframes scrollDown{
+
+    0%{
+
+        top:10px;
+
+        opacity:0;
+
+    }
+
+    30%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        top:36px;
+
+        opacity:0;
+
+    }
+
+}
+
+/*============== TEXT GLOW ==============*/
+
+.hero-content h1{
+
+    animation:titleGlow 4s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+    0%{
+
+        text-shadow:0 0 15px rgba(255,77,148,.25);
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 35px rgba(255,77,148,.7),
+        0 0 60px rgba(124,92,255,.45);
+
+    }
+
+    100%{
+
+        text-shadow:0 0 15px rgba(255,77,148,.25);
+
+    }
+
+}
+
+/*============== RESPONSIVE ==============*/
+
+@media(max-width:991px){
+
+.hero{
+
+padding:120px 25px 80px;
+
+}
+
+.hero-content{
+
+padding:45px 30px;
+
+}
+
+.hero-content h1{
+
+font-size:3rem;
+
+}
+
+.hero-content h2{
+
+font-size:1.5rem;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero-content{
+
+padding:35px 22px;
+
+border-radius:22px;
+
+}
+
+.hero-content h1{
+
+font-size:2.3rem;
+
+}
+
+.hero-content h2{
+
+font-size:1.2rem;
+
+}
+
+.hero-content h3{
+
+font-size:1rem;
+
+}
+
+.hero-content p{
+
+font-size:.95rem;
+
+line-height:1.8;
+
+}
+
+.hero-content button{
+
+width:100%;
+
+padding:16px;
+
+}
+
+}
+/*==================================================
+        CSS V2 - PART 3A
+        PREMIUM STORY CARDS
+==================================================*/
+
+/*=============== STORY SECTION ===============*/
+
+.story-card{
+
+    position:relative;
+
+    padding:120px 8%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/*=============== GLASS CARD ===============*/
+
+.glass-card{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:60px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    -webkit-backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.35),
+
+    inset 0 1px 0 rgba(255,255,255,.12);
+
+    transition:.5s ease;
+
+}
+
+/*=============== CARD NUMBER ===============*/
+
+.glass-card span{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent));
+
+    box-shadow:
+
+    0 10px 30px rgba(255,77,148,.35);
+
+    margin-bottom:25px;
+
+}
+
+/*=============== CARD TITLE ===============*/
+
+.glass-card h2{
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+    line-height:1.3;
+
+}
+
+/*=============== CARD PARAGRAPH ===============*/
+
+.glass-card p{
+
+    color:var(--text-light);
+
+    font-size:1.05rem;
+
+    line-height:2;
+
+    margin-bottom:18px;
+
+}
+
+/*=============== CREDIT ===============*/
+
+.credit{
+
+    margin-top:30px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    color:var(--secondary);
+
+    letter-spacing:1px;
+
+}
+
+/*=============== SPECIAL CARD ===============*/
+
+.special-card{
+
+    border:1px solid rgba(255,77,148,.35);
+
+}
+
+/*=============== CARD DECORATION ===============*/
+
+.glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    background:radial-gradient(
+
+    circle,
+
+    rgba(255,77,148,.20),
+
+    transparent 70%
+
+    );
+
+    top:-130px;
+
+    right:-100px;
+
+    border-radius:50%;
+
+}
+
+.glass-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:radial-gradient(
+
+    circle,
+
+    rgba(124,92,255,.18),
+
+    transparent 70%
+
+    );
+
+    bottom:-120px;
+
+    left:-90px;
+
+    border-radius:50%;
+
+}
+/*==================================================
+        CSS V2 - PART 3B
+     PREMIUM CARD ANIMATIONS & EFFECTS
+==================================================*/
+
+/*============== HOVER EFFECT ==============*/
+
+.glass-card:hover{
+
+    transform:
+    translateY(-15px)
+    scale(1.02);
+
+    box-shadow:
+
+    0 35px 80px rgba(0,0,0,.45),
+
+    0 0 45px rgba(255,77,148,.25);
+
+}
+
+/*============== SHINE EFFECT ==============*/
+
+.glass-card{
+
+    overflow:hidden;
+
+}
+
+.glass-card::before{
+
+    animation:cardGlow 8s linear infinite;
+
+}
+
+.glass-card::after{
+
+    animation:cardGlow2 10s linear infinite;
+
+}
+
+@keyframes cardGlow{
+
+    0%{
+
+        transform:translateX(-40px);
+
+    }
+
+    50%{
+
+        transform:translateX(40px);
+
+    }
+
+    100%{
+
+        transform:translateX(-40px);
+
+    }
+
+}
+
+@keyframes cardGlow2{
+
+    0%{
+
+        transform:translateY(-30px);
+
+    }
+
+    50%{
+
+        transform:translateY(30px);
+
+    }
+
+    100%{
+
+        transform:translateY(-30px);
+
+    }
+
+}
+
+/*============== TOP BORDER ==============*/
+
+.glass-card::marker{
+
+    content:"";
+
+}
+
+.glass-card{
+
+    border-top:2px solid rgba(255,255,255,.18);
+
+}
+
+/*============== TITLE ANIMATION ==============*/
+
+.glass-card h2{
+
+    transition:.4s;
+
+}
+
+.glass-card:hover h2{
+
+    color:var(--secondary);
+
+    letter-spacing:1px;
+
+}
+
+/*============== NUMBER EFFECT ==============*/
+
+.glass-card span{
+
+    transition:.45s;
+
+}
+
+.glass-card:hover span{
+
+    transform:
+
+    rotate(360deg)
+
+    scale(1.12);
+
+}
+
+/*============== PARAGRAPH ==============*/
+
+.glass-card p{
+
+    transition:.35s;
+
+}
+
+.glass-card:hover p{
+
+    color:#ffffff;
+
+}
+
+/*============== PREMIUM BORDER ==============*/
+
+.glass-card{
+
+    position:relative;
+
+}
+
+.glass-card .border-light{
+
+    display:none;
+
+}
+
+.glass-card:hover{
+
+    border-color:
+
+    rgba(255,77,148,.35);
+
+}
+
+/*============== SECTION BACKGROUND ==============*/
+
+.story-card:nth-child(even){
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    rgba(255,255,255,.02),
+
+    transparent,
+
+    rgba(255,255,255,.02)
+
+    );
+
+}
+
+/*============== SCROLL ANIMATION ==============*/
+
+.story-card{
+
+    animation:fadeCard .8s ease;
+
+}
+
+@keyframes fadeCard{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*============== MOBILE ==============*/
+
+@media(max-width:992px){
+
+.glass-card{
+
+padding:45px 35px;
+
+}
+
+.glass-card h2{
+
+font-size:2rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.story-card{
+
+padding:80px 20px;
+
+}
+
+.glass-card{
+
+padding:35px 25px;
+
+border-radius:22px;
+
+}
+
+.glass-card span{
+
+width:60px;
+
+height:60px;
+
+font-size:1.2rem;
+
+}
+
+.glass-card h2{
+
+font-size:1.7rem;
+
+}
+
+.glass-card p{
+
+font-size:.97rem;
+
+line-height:1.9;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.glass-card{
+
+padding:28px 20px;
+
+}
+
+.glass-card h2{
+
+font-size:1.45rem;
+
+}
+
+.credit{
+
+font-size:.85rem;
+
+}
+
+}
+/*==================================================
+        CSS V2 - PART 4A
+        PREMIUM GALLERY SECTION
+==================================================*/
+
+/*============== GALLERY ==============*/
+
+.gallery{
+
+    padding:120px 8%;
+
+    position:relative;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+    font-size:3rem;
+
+    color:#fff;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--text-light);
+
+    line-height:2;
+
+    font-size:1.05rem;
+
+}
+
+/*============== GRID ==============*/
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+}
+
+/*============== CARD ==============*/
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    transition:.55s;
+
+    cursor:pointer;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+
+}
+
+/*============== IMAGE ==============*/
+
+.gallery-item img{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.7s;
+
+}
+
+/*============== OVERLAY ==============*/
+
+.gallery-text{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:30px;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.88),
+
+        rgba(0,0,0,.20),
+
+        transparent
+
+    );
+
+    opacity:0;
+
+    transition:.55s;
+
+}
+
+.gallery-text h3{
+
+    color:#fff;
+
+    font-size:1.6rem;
+
+    margin-bottom:12px;
+
+}
+
+.gallery-text p{
+
+    color:#f3f3f3;
+
+    line-height:1.8;
+
+    font-size:.95rem;
+
+}
+
+/*============== HOVER ==============*/
+
+.gallery-item:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+
+    0 25px 60px rgba(255,77,148,.28);
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.gallery-item:hover .gallery-text{
+
+    opacity:1;
+
+}
+
+/*============== SHINE EFFECT ==============*/
+
+.gallery-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-60%;
+
+    width:180px;
+
+    height:300%;
+
+    background:rgba(255,255,255,.20);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    z-index:2;
+
+}
+
+.gallery-item:hover::before{
+
+    left:160%;
+
+}
+
+/*============== BORDER GLOW ==============*/
+
+.gallery-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,77,148,.30);
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.gallery-item:hover::after{
+
+    opacity:1;
+
+}
+
+/*============== MOBILE ==============*/
+
+@media(max-width:768px){
+
+.gallery{
+
+padding:90px 20px;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+gap:25px;
+
+}
+
+.gallery-item img{
+
+height:340px;
+
+}
+
+.section-title h2{
+
+font-size:2.2rem;
+
+}
+
+}
+/*==================================================
+        CSS V2 - PART 4B
+     PREMIUM GALLERY EFFECTS
+==================================================*/
+
+/*============== IMAGE RADIUS ==============*/
+
+.gallery-item{
+
+    isolation:isolate;
+
+}
+
+/*============== IMAGE GLOW ==============*/
+
+.gallery-item img{
+
+    filter:brightness(.96) contrast(1.05);
+
+}
+
+.gallery-item:hover img{
+
+    filter:brightness(1.08) contrast(1.12) saturate(1.15);
+
+}
+
+/*============== CAPTION ANIMATION ==============*/
+
+.gallery-text h3{
+
+    transform:translateY(25px);
+
+    opacity:0;
+
+    transition:.55s ease;
+
+}
+
+.gallery-text p{
+
+    transform:translateY(35px);
+
+    opacity:0;
+
+    transition:.75s ease;
+
+}
+
+.gallery-item:hover .gallery-text h3,
+
+.gallery-item:hover .gallery-text p{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+/*============== SOFT GLOW ==============*/
+
+.gallery-item:hover{
+
+    box-shadow:
+
+    0 25px 60px rgba(255,77,148,.30),
+
+    0 0 35px rgba(124,92,255,.25);
+
+}
+
+/*============== FLOAT EFFECT ==============*/
+
+.gallery-item{
+
+    animation:galleryFloat 7s ease-in-out infinite;
+
+}
+
+.gallery-item:nth-child(even){
+
+    animation-delay:2s;
+
+}
+
+.gallery-item:nth-child(3n){
+
+    animation-delay:4s;
+
+}
+
+@keyframes galleryFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*============== GLASS BORDER ==============*/
+
+.gallery-item{
+
+    border:1px solid rgba(255,255,255,.10);
+
+}
+
+.gallery-item:hover{
+
+    border-color:rgba(255,77,148,.40);
+
+}
+
+/*============== IMAGE SCALE ==============*/
+
+.gallery-item{
+
+    transition:
+
+    transform .45s,
+
+    box-shadow .45s,
+
+    border-color .45s;
+
+}
+
+/*============== TITLE ==============*/
+
+.gallery-text h3{
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/*============== PARAGRAPH ==============*/
+
+.gallery-text p{
+
+    color:#ececec;
+
+}
+
+/*============== RESPONSIVE ==============*/
+
+@media(max-width:768px){
+
+.gallery-text{
+
+padding:20px;
+
+}
+
+.gallery-text h3{
+
+font-size:1.3rem;
+
+}
+
+.gallery-text p{
+
+font-size:.9rem;
+
+line-height:1.7;
+
+}
+
+}
+/*==================================================
+        CSS V2 - PART 5A
+     LOVE LETTER • SURPRISE • MUSIC PLAYER
+==================================================*/
+
+/*============== LOVE LETTER ==============*/
+
+.love-letter{
+
+    padding:120px 8%;
+
+    position:relative;
+
+}
+
+.love-letter .glass-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:70px 60px;
+
+}
+
+.love-letter h2{
+
+    font-size:2.8rem;
+
+    color:#fff;
+
+    margin-bottom:30px;
+
+}
+
+.love-letter p{
+
+    color:var(--text-light);
+
+    line-height:2.1;
+
+    font-size:1.08rem;
+
+}
+
+/*============== LETTER GLOW ==============*/
+
+.love-letter .glass-card{
+
+    transition:.45s;
+
+}
+
+.love-letter .glass-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 25px 60px rgba(255,77,148,.28),
+
+    0 0 35px rgba(124,92,255,.20);
+
+}
+
+/*============== SURPRISE SECTION ==============*/
+
+.surprise{
+
+    padding:120px 8%;
+
+    text-align:center;
+
+}
+
+.surprise .glass-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:70px 60px;
+
+}
+
+.surprise h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.surprise h3{
+
+    color:var(--secondary);
+
+    font-size:1.6rem;
+
+    margin-bottom:20px;
+
+}
+
+.surprise p{
+
+    color:var(--text-light);
+
+    line-height:2;
+
+    margin-bottom:40px;
+
+}
+
+/*============== CELEBRATE BUTTON ==============*/
+
+#celebrateBtn{
+
+    padding:18px 48px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent));
+
+    transition:.45s;
+
+    box-shadow:
+
+    0 18px 40px rgba(255,77,148,.35);
+
+}
+
+#celebrateBtn:hover{
+
+    transform:
+
+    translateY(-6px)
+
+    scale(1.05);
+
+    box-shadow:
+
+    0 25px 55px rgba(255,77,148,.45);
+
+}
+
+/*============== MUSIC PLAYER ==============*/
+
+.music-player{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    z-index:999;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+}
+
+.music-player button{
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent));
+
+    transition:.35s;
+
+}
+
+.music-player button:hover{
+
+    transform:scale(1.08);
+
+}
+
+.music-player span{
+
+    color:#fff;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+}
+
+/*============== MOBILE ==============*/
+
+@media(max-width:768px){
+
+.love-letter,
+
+.surprise{
+
+padding:90px 20px;
+
+}
+
+.love-letter .glass-card,
+
+.surprise .glass-card{
+
+padding:40px 28px;
+
+}
+
+.love-letter h2,
+
+.surprise h2{
+
+font-size:2rem;
+
+}
+
+.music-player{
+
+right:15px;
+
+left:15px;
+
+bottom:15px;
+
+justify-content:center;
+
+}
+
+}
+/*==================================================
+        CSS V2 - PART 5B
+   FLOATING HEARTS • FOOTER • FINAL EFFECTS
+==================================================*/
+
+/*============== FLOATING HEARTS ==============*/
+
+.floating-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+.floating-hearts span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    font-size:26px;
+
+    animation:heartFloat linear infinite;
+
+    opacity:.75;
+
+}
+
+.floating-hearts span:nth-child(1){
+
+left:8%;
+animation-duration:10s;
+animation-delay:0s;
+
+}
+
+.floating-hearts span:nth-child(2){
+
+left:18%;
+animation-duration:13s;
+animation-delay:2s;
+
+}
+
+.floating-hearts span:nth-child(3){
+
+left:32%;
+animation-duration:9s;
+animation-delay:1s;
+
+}
+
+.floating-hearts span:nth-child(4){
+
+left:47%;
+animation-duration:14s;
+animation-delay:3s;
+
+}
+
+.floating-hearts span:nth-child(5){
+
+left:63%;
+animation-duration:11s;
+animation-delay:4s;
+
+}
+
+.floating-hearts span:nth-child(6){
+
+left:76%;
+animation-duration:12s;
+animation-delay:1s;
+
+}
+
+.floating-hearts span:nth-child(7){
+
+left:89%;
+animation-duration:10s;
+animation-delay:2s;
+
+}
+
+.floating-hearts span:nth-child(8){
+
+left:95%;
+animation-duration:15s;
+animation-delay:5s;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(0) scale(.5) rotate(0deg);
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.4) rotate(360deg);
+opacity:0;
+
+}
+
+}
+
+/*============== CONFETTI ==============*/
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:5;
+
+}
+
+/*============== FOOTER ==============*/
+
+footer{
+
+    margin-top:120px;
+
+    padding:80px 8% 40px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+}
+
+.footer-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.footer-container h2{
+
+    font-size:2.2rem;
+
+    margin-bottom:20px;
+
+}
+
+.footer-container p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:22px;
+
+    margin:35px 0;
+
+}
+
+.footer-links a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.social-icons a{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.08);
+
+    transition:.4s;
+
+}
+
+.social-icons a:hover{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent));
+
+    transform:translateY(-8px) rotate(10deg);
+
+}
+
+.credit{
+
+    color:var(--secondary);
+
+    font-weight:600;
+
+}
+
+.copyright{
+
+    font-size:.9rem;
+
+    opacity:.8;
+
+}
+
+/*============== FINAL RESPONSIVE ==============*/
+
+@media(max-width:768px){
+
+.footer-links{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.social-icons{
+
+flex-wrap:wrap;
+
+}
+
+footer{
+
+padding:60px 20px 30px;
+
+}
+
+.footer-container h2{
+
+font-size:1.8rem;
+
+}
+
+.footer-container p{
+
+font-size:.95rem;
+
+}
+
+}
+
+/*============== FINAL SMOOTH EFFECTS ==============*/
+
+section{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+button{
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+a{
+
+    transition:.35s;
+
+}
+
+/*================ VIDEO MEMORY STYLE ================*/
+
+.video-memory {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.video-memory:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.video-memory video {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.6s ease;
+}
+
+.video-memory:hover video {
+    transform: scale(1.06);
+}
+
+/* Soft beautiful overlay */
+
+.video-memory::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 77, 148, 0.15),
+        transparent 50%,
+        rgba(255, 255, 255, 0.08)
+    );
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+    .video-memory video {
+        min-height: 220px;
+    }
+}
+/*==================================================
+  VIDEO MEMORY CARDS
+  Same Gallery Animation & Style
+==================================================*/
+
+.video-memory {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Video size */
+
+.video-memory video {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+    background: #000;
+}
+
+/* Same smooth hover effect as gallery */
+
+.video-memory:hover video {
+    transform: scale(1.05);
+    transition: transform 0.6s ease;
+}
+
+/* Smooth card animation */
+
+.video-memory {
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.video-memory:hover {
+    transform: translateY(-8px);
+}
+
+/* Soft romantic overlay */
+
+.video-memory::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 77, 148, 0.12),
+        transparent 45%,
+        rgba(255, 255, 255, 0.08)
+    );
+}
+
+/* Text stays above overlay */
+
+.video-memory .gallery-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .video-memory video {
+        min-height: 220px;
+    }
+
+}
+/*==================================================
+  5 VIDEO GALLERY CARDS
+==================================================*/
+
+.video-memory {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Video */
+
+.video-memory video {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+    background: #000;
+    transition: transform 0.6s ease;
+}
+
+/* Same beautiful hover animation as gallery */
+
+.video-memory:hover {
+    transform: translateY(-8px);
+}
+
+.video-memory:hover video {
+    transform: scale(1.05);
+}
+
+/* Soft romantic overlay */
+
+.video-memory::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 77, 148, 0.12),
+        transparent 50%,
+        rgba(255, 255, 255, 0.08)
+    );
+}
+
+/* Video controls remain clickable */
+
+.video-memory video {
+    position: relative;
+    z-index: 2;
+}
+
+/* Text */
+
+.video-memory .gallery-text {
+    position: relative;
+    z-index: 3;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .video-memory video {
+        min-height: 220px;
+    }
+
+}
+/*==================================================
+        PREMIUM VIDEO GALLERY
+==================================================*/
+
+/* Video Card */
+
+.gallery-grid > video {
+    width: 100%;
+
+    /* Thori zyada height */
+    min-height: 340px;
+
+    aspect-ratio: 16 / 11;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #000;
+
+    /* White stroke */
+    border: 3px solid rgba(255, 255, 255, 0.95);
+
+    border-radius: 22px;
+
+    cursor: pointer;
+
+    /* Premium shadow */
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.20),
+        0 0 0 rgba(255, 255, 255, 0);
+
+    /*
+      Smooth animation
+    */
+
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.7s ease,
+        filter 0.7s ease,
+        border-color 0.7s ease;
+
+    animation:
+        videoFadeIn 1s ease both;
+}
+
+
+/*==================================================
+              HOVER ANIMATION
+==================================================*/
+
+/*
+  Cursor video par jaate hi:
+  - Video thora zoom OUT
+  - Card upar lift
+  - White border glow
+*/
+
+.gallery-grid > video:hover {
+
+    transform:
+        translateY(-12px)
+        scale(0.96);
+
+    border-color: #ffffff;
+
+    filter:
+        brightness(1.08)
+        contrast(1.05)
+        saturate(1.12);
+
+    box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.28),
+        0 0 22px rgba(255, 255, 255, 0.35);
+
+}
+
+
+/*==================================================
+       CLICK / ACTIVE EFFECT
+==================================================*/
+
+.gallery-grid > video:active {
+
+    transform:
+        translateY(-5px)
+        scale(0.94);
+
+    transition: transform 0.15s ease;
+
+}
+
+
+/*==================================================
+          VIDEO ENTRANCE ANIMATION
+==================================================*/
+
+@keyframes videoFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.94);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/*==================================================
+           ANIMATION DELAY
+==================================================*/
+
+.gallery-grid > video:nth-last-child(5) {
+    animation-delay: 0.1s;
+}
+
+.gallery-grid > video:nth-last-child(4) {
+    animation-delay: 0.2s;
+}
+
+.gallery-grid > video:nth-last-child(3) {
+    animation-delay: 0.3s;
+}
+
+.gallery-grid > video:nth-last-child(2) {
+    animation-delay: 0.4s;
+}
+
+.gallery-grid > video:nth-last-child(1) {
+    animation-delay: 0.5s;
+}
+
+
+/*==================================================
+              MOBILE RESPONSIVE
+==================================================*/
+
+@media (max-width: 768px) {
+
+    .gallery-grid > video {
+
+        min-height: 260px;
+
+        aspect-ratio: 16 / 11;
+
+        border-width: 2px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .gallery-grid > video:hover {
+
+        transform:
+            translateY(-7px)
+            scale(0.97);
+
+    }
+
+}
+
+
+/*==================================================
+              SMALL MOBILE
+==================================================*/
+
+@media (max-width: 480px) {
+
+    .gallery-grid > video {
+
+        min-height: 230px;
+
+        border-radius: 16px;
+
+    }
+
+}
